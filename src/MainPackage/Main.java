@@ -6,21 +6,12 @@ import java.io.InputStreamReader;
 
 public class Main
 {
-    private static long money;
-    private static long glory;
-    private static long crime;
-    private static String location;
     private static BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
     public Main() throws IOException, InterruptedException
     {
         new My();
         play();
-
-        this.money = My.getMoney();
-        this.glory = My.getGlory();
-        this.crime = My.getCrime();
-        this.location = My.getLocation();
     }
 
     private static void play() throws IOException, InterruptedException
@@ -41,6 +32,11 @@ public class Main
                 new Shop.WhatToBuy();
             else if (command.equals("Charity"))
                 new Charity.WhereTo();
+
+            else if (command.equals("My.setGlory(500);")) //Cheat code
+                My.setGlory(500);
+            else if (command.equals("My.setMoney(5000000);")) //Cheat code
+                My.setMoney(5000000);
         }
     }
 
